@@ -1,6 +1,4 @@
-🌐 INCIDENTE 3 – DNS MAL CONFIGURADO (Windows 11)
 
-Caso simulado, estilo Helpdesk para tu portafolio. Aquí va el .md listo para copiar y subir:
 
 # 🌐 IT Incident Report: DNS Misconfiguration – Windows 11
 
