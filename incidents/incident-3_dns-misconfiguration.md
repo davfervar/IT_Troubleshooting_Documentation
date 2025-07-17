@@ -47,7 +47,7 @@ This prevented name resolution for all domains, despite having working internet 
 
 ## 🛠️ Solution Applied
 
-    Opened Control Panel → Network and Internet → Network Connections
+      Opened Control Panel → Network and Internet → Network Connections
 
     Right-clicked the active network adapter → Properties
 
@@ -57,40 +57,41 @@ This prevented name resolution for all domains, despite having working internet 
 
         Alternatively, entered public DNS manually:
 
-    Preferred DNS: 8.8.8.8  
-    Alternate DNS: 1.1.1.1
+Preferred DNS: 8.8.8.8  
+Alternate DNS: 1.1.1.1
 
     Flushed DNS cache and renewed IP:
 
-    ipconfig /flushdns
-    ipconfig /release
-    ipconfig /renew
+ipconfig /flushdns
+ipconfig /release
+ipconfig /renew
 
     Retested with:
 
-    ping google.com → Success  
-    nslookup google.com → Returns IP address
+ping google.com → Success  
+nslookup google.com → Returns IP address
+
 
 ## ✅  Final Result
 
 
-    DNS resolution restored
+   DNS resolution restored
 
-    User can browse the internet normally
+   User can browse the internet normally
 
-    No more errors in browser
+   No more errors in browser
 
-    System resolves both internal and external domains
+   System resolves both internal and external domains
 
 ## 📌 Recomendatios
 
-    Avoid setting static DNS manually unless required by the network
+   Avoid setting static DNS manually unless required by the network
 
-    Use reliable public DNS like Google (8.8.8.8) or Cloudflare (1.1.1.1)
+   Use reliable public DNS like Google (8.8.8.8) or Cloudflare (1.1.1.1)
 
-    Train users to report "DNS server not responding" errors promptly
+   Train users to report "DNS server not responding" errors promptly
 
-    Consider using DHCP reservations and enforced DNS policies via Group Policy in corporate environments
+   Consider using DHCP reservations and enforced DNS policies via Group Policy in corporate environments
 
 ✅ Logged and resolved by: [Your Name]
 🗓️ Date: [Insert Date]
