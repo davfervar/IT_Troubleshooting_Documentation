@@ -22,4 +22,4 @@ It shows real-world scenarios encountered by IT technicians, with each case incl
 
 ## 🚀 Autor
 
-David Varga
+David Vargas
