@@ -32,7 +32,7 @@ A simple but powerful network diagnostic tool built with Python and Tkinter for 
 ### ▶️ To run from source:
 Download the python file on your pc and run it with python.
 
-script ----> [](scripts/connectivity_check_tool.py)
+script ----> [Script](scripts/connectivity_check_tool.py)
 
 ✍️ Author
 
