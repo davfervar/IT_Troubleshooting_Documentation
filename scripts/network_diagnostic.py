@@ -1,25 +1,3 @@
-
-# 🐍 IT Incident Report: Python Network Diagnostic Script – Windows 11
-
-## 📌 Incident Overview
-- **Title:** Python Script for Automated Network Troubleshooting  
-- **Environment:** Windows 11 Pro x64  
-- **Use Case:** Helpdesk or system administrators can quickly diagnose connectivity and DNS issues using a simple Python tool.
-
----
-
-## 🧾 Problem Description
-Manual troubleshooting of network issues can be time-consuming. This script aims to automate common checks such as:
-- Local interface availability
-- Gateway reachability
-- Internet access
-- DNS resolution
-
----
-
-## 🛠️ Python Script: `network_diagnostic.py`
-
-```python
 import os
 import platform
 import socket
