@@ -1,70 +1,105 @@
-# 🛠️ IT Incident Report: Network Diagnostic GUI Tool – Windows 11
+# 🧰 Network Diagnostic Tool – Windows 11 (Python GUI)
 
-## 📌 Incident Overview
-- **Title:** IT Toolkit v3.3 – Graphical Network Diagnostic Utility  
-- **Environment:** Windows 11 Pro (Build 22631.xxxx)  
-- **User Impact:** Helpdesk staff required a centralized tool to run basic and advanced network diagnostics through a user-friendly interface.
+A simple but powerful network diagnostic tool built with Python and Tkinter for IT helpdesk and sysadmin use. This GUI utility allows you to perform basic network tests like local IP retrieval, DNS resolution, and ping tests to check internet connectivity.
 
 ---
 
-## 🧾 Problem Description
+## 📌 Project Overview
 
-Helpdesk technicians were relying on separate CLI tools (`ping`, `ipconfig`, `nslookup`, `tracert`, etc.), making it inefficient and error-prone to troubleshoot user issues. A unified GUI-based toolkit was needed to streamline common network troubleshooting tasks.
-
----
-
-## 🔍 Troubleshooting & Design Steps
-
-A Python script was developed using `tkinter` for the GUI. Features included:
-
-- 📋 Display of full adapter info (`ipconfig /all`)
-- 🌐 Local and public IP retrieval
-- 📶 Ping to gateway and external addresses
-- 🛣️ Traceroute to external domains
-- 🔍 Port scanning utility (basic)
-- 💡 Wake-on-LAN functionality
-- 🔄 Flush DNS, release/renew IP
-- 📊 Tab view for ARP table, active connections, and interface metrics
+- **Tool Name:** Network Diagnostic GUI  
+- **Platform:** Windows 11 (Built using Python 3.13)  
+- **Purpose:** Help IT staff troubleshoot basic connectivity issues via a user-friendly interface.  
+- **Language:** Python (with Tkinter)  
+- **Packaged as:** Standalone `.exe` using `pyinstaller`
 
 ---
 
-## 🧩 Root Cause
+## 🎯 Features
 
-The lack of a centralized diagnostic tool led to increased time and reduced consistency across helpdesk operations. Multiple windows and commands made troubleshooting inefficient and inconsistent.
+- 🔍 Detects local IP address
+- 🌐 Performs ping tests to `8.8.8.8` (Google DNS)
+- 🧠 Tests DNS resolution (e.g., resolves `google.com`)
+- ✅ GUI pop-up with pass/fail results
+- 🗃️ Clean and minimal interface, suitable for non-technical users
 
 ---
 
-## 🛠️ Solution Applied
+## 📸 Screenshot
 
-1. Created a `network_gui.py` script using `tkinter`, modularized into logical diagnostic sections.
-2. Implemented multi-threading to prevent GUI from freezing during scans or pings.
-3. Used `subprocess` with `STARTUPINFO` to suppress command prompt windows.
-4. Integrated friendly pop-up messages (`messagebox`) and organized tables with `ttk.Treeview`.
-5. Compiled into a `.exe` using:
-   ```powershell
-   pyinstaller --onefile --windowed network_gui.py
+> ![Screenshot of GUI](screenshots/network_gui_demo.png)  
+*Simple layout with one-click diagnostics*
 
-    Final .exe placed in dist/ and tested across multiple Windows 11 systems successfully.
+---
 
-✅ Final Result
+## 🚀 Installation & Usage
 
-    Fully functional, self-contained executable.
+### 🔧 Prerequisites (for source code)
 
-    Improved response time for diagnosing network problems.
+- Python 3.10+ installed on Windows
+- Required modules: `tkinter`, `socket`, `subprocess`
 
-    Easier onboarding for non-technical support agents.
+### ▶️ To run from source:
 
-    Reduced tool-switching and human error in diagnostics.
+```bash
+python network_gui.py
 
-📌 Recommendations
+🪄 To create the .exe (optional):
 
-    Digitally sign the executable for corporate-wide distribution.
+Install PyInstaller if you haven’t:
 
-    Implement optional email reporting or auto-logging to a file.
+pip install pyinstaller
 
-    Add VPN and proxy detection in future versions.
+Then generate the EXE:
 
-    Include in SCCM or Intune for automatic deployment.
+pyinstaller --onefile --windowed network_gui.py
 
-✅ Logged and created by: David Vargas
-🗓️ Date: July 17, 2025
+Executable will appear in the dist/ folder.
+🧾 Sample Output
+
+When running diagnostics, the tool returns:
+
+✅ Local IP: 192.168.1.45  
+✅ Connectivity to 8.8.8.8 successful  
+✅ DNS resolution working  
+
+Or error messages like:
+
+❌ Could not ping 8.8.8.8  
+❌ DNS resolution failed  
+
+📁 Files Included
+
+    network_gui.py — Python source code
+
+    network_gui.exe — Compiled executable (optional, not versioned)
+
+    README.md — This documentation
+
+    screenshots/ — Optional GUI screenshot(s)
+
+✍️ Author
+
+    Name: David Vargas
+
+    Role: IT Support Specialist (UCF Graduate)
+
+    Date: July 17, 2025
+
+💡 Future Ideas
+
+    Add traceroute and gateway ping
+
+    Export results to .txt or .log
+
+    Auto-repair DNS with fallback (e.g., switch to 1.1.1.1)
+
+    Integrate system info panel (OS, hostname, uptime)
+
+📜 License
+
+This project is released under the MIT License.
+
+
+---
+
+Let me know if you'd like this turned into a downloadable ZIP with the `README`, `.py`, and scr
