@@ -1,6 +1,6 @@
 # 🛠️ Incident 1: No Internet Connection (Ubuntu)
 
-## 🧾 Problem Description
+## 📌 Incident Overview
 
 This incident involved a network outage on an **Ubuntu virtual machine**. The system was unable to access websites or respond to external ping requests, suggesting a deeper connectivity issue.
 
