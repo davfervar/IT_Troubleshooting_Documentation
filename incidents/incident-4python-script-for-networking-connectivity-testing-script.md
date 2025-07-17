@@ -25,14 +25,9 @@ A simple but powerful network diagnostic tool built with Python and Tkinter for 
 
 ## 🚀 Installation & Usage
 
-### 🔧 Prerequisites (for source code)
-
 - Python 3.10+ installed on Windows
-  
-### ▶️ To run from source:
-Download the python file on your pc and run it with python.
-
-script ----> [Script](scripts/connectivity_check_tool.py)
+- Download the python script on your pc and run it with python.
+- Script located in the scripts folder
 
 ✍️ Author
 
