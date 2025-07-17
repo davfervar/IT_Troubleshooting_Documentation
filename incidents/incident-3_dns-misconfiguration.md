@@ -47,29 +47,29 @@ This prevented name resolution for all domains, despite having working internet 
 
 ## 🛠️ Solution Applied
 
-      Opened Control Panel → Network and Internet → Network Connections
+   Opened Control Panel → Network and Internet → Network Connections
 
-    Right-clicked the active network adapter → Properties
+   Right-clicked the active network adapter → Properties
 
-    Selected Internet Protocol Version 4 (TCP/IPv4) → Properties
+   Selected Internet Protocol Version 4 (TCP/IPv4) → Properties
 
-    Changed DNS settings from manual to automatic (Obtain DNS server address automatically)
+   Changed DNS settings from manual to automatic (Obtain DNS server address automatically)
 
-        Alternatively, entered public DNS manually:
+   Alternatively, entered public DNS manually:
 
-Preferred DNS: 8.8.8.8  
-Alternate DNS: 1.1.1.1
+    Preferred DNS: 8.8.8.8  
+    Alternate DNS: 1.1.1.1
 
-    Flushed DNS cache and renewed IP:
+   Flushed DNS cache and renewed IP:
 
-ipconfig /flushdns
-ipconfig /release
-ipconfig /renew
+    ipconfig /flushdns
+    ipconfig /release
+    ipconfig /renew
 
-    Retested with:
+   Retested with:
 
-ping google.com → Success  
-nslookup google.com → Returns IP address
+    ping google.com → Success  
+    nslookup google.com → Returns IP address
 
 
 ## ✅  Final Result
