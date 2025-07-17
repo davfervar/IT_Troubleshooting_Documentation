@@ -35,16 +35,14 @@ The C:\ drive was nearly full due to a combination of:
 
 ## 🛠️ Solution Applied
 
-       1. Cleared unnecessary files using Disk Cleanup:
-       ``powershell
+    1. Cleared unnecessary files using Disk Cleanup:
+       ```powershell cleanmgr /verylowdisk
 
-       cleanmgr /verylowdisk
-
-        Enabled Storage Sense to run automatically every week:
+    2. Enabled Storage Sense to run automatically every week:
 
         Start → Settings → System → Storage → Storage Sense → Enable
 
-        Deleted user files from:
+    3.Deleted user files from:
 
         Downloads
 
@@ -52,7 +50,7 @@ The C:\ drive was nearly full due to a combination of:
 
         AppData\Local\Temp
 
-        Uninstalled unused applications via:
+    4.Uninstalled unused applications via:
 
         Control Panel → Programs and Features
 
