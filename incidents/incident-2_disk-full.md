@@ -37,13 +37,14 @@ The C:\ drive was nearly full due to a combination of:
 
 1. Cleared unnecessary files using Disk Cleanup:
 ``powershell
-cleanmgr /verylowdisk
 
-    Enabled Storage Sense to run automatically every week:
+       cleanmgr /verylowdisk
 
-Start → Settings → System → Storage → Storage Sense → Enable
+        Enabled Storage Sense to run automatically every week:
 
-    Deleted user files from:
+        Start → Settings → System → Storage → Storage Sense → Enable
+
+        Deleted user files from:
 
         Downloads
 
@@ -51,13 +52,13 @@ Start → Settings → System → Storage → Storage Sense → Enable
 
         AppData\Local\Temp
 
-    Uninstalled unused applications via:
+        Uninstalled unused applications via:
 
-    Control Panel → Programs and Features
+        Control Panel → Programs and Features
 
-    Created a scheduled task to clear temp files monthly.
+        Created a scheduled task to clear temp files monthly.
 
-##✅ Final Result
+## ✅ Final Result
 
     25+ GB of disk space recovered
 
@@ -67,7 +68,7 @@ Start → Settings → System → Storage → Storage Sense → Enable
 
     PC performance improved
 
-##📌 Recommendations
+## 📌 Recommendations
 
     Educate users to periodically clean Downloads and Temp folders
 
