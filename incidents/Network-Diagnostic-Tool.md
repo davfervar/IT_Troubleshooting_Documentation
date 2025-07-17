@@ -29,6 +29,6 @@ A simple but powerful network diagnostic tool built with Python and Tkinter for 
 - Download the python script on your pc and run it with python.
 - Script located in the scripts folder
 
-✍️ Author
-✅ Logged and resolved by: David Vargas 🗓️ Date: 7/17/2025 🖥️ System: Windows 11 Pro
+## ✍️ Author
+✅ by: David Vargas 🗓️ Date: 7/17/2025 🖥️ System: Windows 11 Pro
     
