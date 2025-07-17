@@ -23,16 +23,17 @@ This incident involved a network outage on an **Ubuntu virtual machine**. The sy
 
 The primary network interface `enp0s3` was found to be **manually disabled**, likely due to a misconfiguration or a user action.
 
-```bash
+``bash
 sudo ip link set enp0s3 down
 
-🛠️ Solution Applied
+## 🛠️ Solution Applied
 
 The interface was re-enabled using the following command:
 
 sudo ip link set enp0s3 up
 
-✅ Final Result
+
+## ✅ Final Result
 
     Network connectivity was restored.
 
@@ -43,8 +44,6 @@ sudo ip link set enp0s3 up
         Access external websites
 
         Resolve domain names via DNS
-
-📌 Notes
 
 This issue highlights the importance of checking interface status and routing configuration early in the troubleshooting process.
 
