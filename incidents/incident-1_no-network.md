@@ -1,63 +1,88 @@
-# 🛠️ IT Incident Report: Network Connectivity Issue on Ubuntu VM
+# 🛠️ IT Incident Report: DNS Misconfiguration on Windows 11
 
 ## 📌 Incident Overview
-- **Title:** Loss of Internet Connectivity  
-- **Environment:** Ubuntu 22.04 Virtual Machine (VirtualBox)  
-- **User Impact:** Unable to browse the web, ping external IPs, or resolve domains.
+
+- **Title:** DNS Not Resolving Domain Names  
+- **Environment:** Windows 11 Pro (Build 22631.3155)  
+- **User Impact:** User cannot browse the web or resolve domains, despite having internet connectivity.
 
 ---
 
 ## 🧾 Problem Description
-The Ubuntu VM experienced a complete network outage. The user reported no internet access: websites failed to load, and even pinging external IP addresses (like `8.8.8.8`) returned errors.
+
+A user reported that they could not open websites in any browser. Pinging known IP addresses (e.g., `8.8.8.8`) worked, but domain names like `google.com` would not resolve. Applications relying on domain names (such as Teams and Outlook) also failed to connect.
 
 ---
 
 ## 🔍 Troubleshooting Steps
 
-| Step | Command | Output | Interpretation |
-|------|---------|--------|----------------|
-| 1 | `ip a` | Only loopback (127.0.0.1); `enp0s3` is DOWN | Network interface is disabled |
-| 2 | `ip route` | *No output* | No default gateway; routing table is empty |
-| 3 | `ping 127.0.0.1` | Success | Local TCP/IP stack is working |
-| 4 | `ping 8.8.8.8` | `Network is unreachable` | No route to the internet |
-| 5 | `ping google.com` | `Temporary failure in name resolution` | DNS not functioning due to no internet |
-| 6 | `cat /etc/resolv.conf` | `127.0.0.53`, managed by systemd | DNS setup appears normal; root issue is networking |
+| Step | Command/Action | Output | Interpretation |
+|------|----------------|--------|----------------|
+| 1 | `ping 127.0.0.1` | Success | Local TCP/IP stack is working |
+| 2 | `ping 8.8.8.8` | Success | Internet connection is active |
+| 3 | `ping google.com` | Ping request could not find host | DNS resolution is failing |
+| 4 | `ipconfig /all` | DNS server set to `192.168.0.5` | Static DNS server configured |
+| 5 | `nslookup google.com` | Timed out or error | DNS server is unreachable or misconfigured |
+| 6 | Checked IPv4 settings in Control Panel | DNS set manually to 192.168.0.5 | DNS is not responding or is incorrect |
 
 ---
 
 ## 🧩 Root Cause
-The primary network interface `enp0s3` was manually disabled using the following command:
 
-sudo ip link set enp0s3 down
+The computer had a manually configured DNS server (`192.168.0.5`) that was either offline, misconfigured, or non-existent. As a result, the system was unable to resolve domain names, even though the internet connection itself was functioning.
 
-Without an active interface, the system could not obtain an IP address or default route.
-
-
+---
 
 ## 🛠️ Solution Applied
 
-    Re-enabled the network interface using:
+Reverted DNS settings to automatic, or used public DNS manually:
 
-    sudo ip link set enp0s3 up
+1. Opened:
 
-    DHCP automatically assigned a valid IP address and default gateway. Network functionality was restored.
+Control Panel → Network and Internet → Network Connections
 
 
-## ✅ Final Result
+2. Right-clicked active adapter → **Properties**
 
-    Internet connectivity successfully restored
+3. Selected:
+
+Internet Protocol Version 4 (TCP/IPv4) → Properties
+
+
+4. Changed from:
+
+Use the following DNS server addresses → to → Obtain DNS server address automatically
+
+
+Or set:
+
+Preferred DNS: 8.8.8.8
+Alternate DNS: 1.1.1.1
+
+
+5. Flushed DNS cache and renewed IP:
+```powershell
+ipconfig /flushdns
+ipconfig /release
+ipconfig /renew
+
+✅ Final Result
 
     DNS resolution functional
 
-    System can access external websites and respond to ping requests
+    Browsers and apps working normally
 
-## 📌 Recommendations
+    System can resolve both internal and external domains
 
-    Avoid manually disabling network interfaces unless troubleshooting.
+📌 Recommendations
 
-    Use nmcli or GUI-based network management tools for interface control.
+    Avoid manually setting DNS unless required for specific environments
 
-    Consider enabling systemd-networkd or NetworkManager to manage interfaces more reliably.
+    Prefer using public DNS (e.g., Google 8.8.8.8 or Cloudflare 1.1.1.1) if needed
+
+    Use DHCP and Group Policy to manage DNS centrally in enterprise environments
+
+    Include DNS checks in automated diagnostic scripts
 
 ✅ Logged and resolved by: David Vargas
 🗓️ Date: 7/17/2025
