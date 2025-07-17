@@ -21,14 +21,15 @@ Manual troubleshooting of network issues can be time-consuming. This script aims
 -----> [Script](scripts/script1)
 
 ## 🧪 Sample Output (Console)
-🔍 Starting network diagnostics...
+    
+    🔍 Starting network diagnostics...
+    
+    Localhost (127.0.0.1): ✅ OK  
+    Default Gateway (192.168.1.1): ✅ OK  
+    Public IP (8.8.8.8): ❌ FAIL  
+    DNS Resolution (google.com): ❌ FAIL  
 
-Localhost (127.0.0.1): ✅ OK  
-Default Gateway (192.168.1.1): ✅ OK  
-Public IP (8.8.8.8): ❌ FAIL  
-DNS Resolution (google.com): ❌ FAIL  
-
-📄 Results saved to 'network_diagnostic_log.txt'
+    📄 Results saved to 'network_diagnostic_log.txt'
 
 ## ✅ Final Result
 
