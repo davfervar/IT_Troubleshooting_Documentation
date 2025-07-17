@@ -35,7 +35,7 @@ ping google.com  → Failed (host not found)
 
 ## 🧩 Root Cause
 
-    The system was using a static DNS IP (192.168.0.5) that was either:
+   The system was using a static DNS IP (192.168.0.5) that was either:
 
     Not reachable
 
@@ -43,7 +43,7 @@ ping google.com  → Failed (host not found)
 
     Not running a DNS service
 
-    This prevented name resolution for all domains, despite having working internet access.
+This prevented name resolution for all domains, despite having working internet access.
 
 ## 🛠️ Solution Applied
 
