@@ -32,7 +32,7 @@ Step	Action/Command	Result	Interpretation
 
 ## 🧩 Root Cause
 
-The system was using a static DNS IP (192.168.0.5) that was either:
+    The system was using a static DNS IP (192.168.0.5) that was either:
 
     Not reachable
 
@@ -40,7 +40,7 @@ The system was using a static DNS IP (192.168.0.5) that was either:
 
     Not running a DNS service
 
-This prevented name resolution for all domains, despite having working internet access.
+    This prevented name resolution for all domains, despite having working internet access.
 
 ## 🛠️ Solution Applied
 
@@ -54,19 +54,19 @@ This prevented name resolution for all domains, despite having working internet 
 
         Alternatively, entered public DNS manually:
 
-Preferred DNS: 8.8.8.8  
-Alternate DNS: 1.1.1.1
+    Preferred DNS: 8.8.8.8  
+    Alternate DNS: 1.1.1.1
 
     Flushed DNS cache and renewed IP:
 
-ipconfig /flushdns
-ipconfig /release
-ipconfig /renew
+    ipconfig /flushdns
+    ipconfig /release
+    ipconfig /renew
 
     Retested with:
 
-ping google.com → Success  
-nslookup google.com → Returns IP address
+    ping google.com → Success  
+    nslookup google.com → Returns IP address
 
 ## ✅  Final Result
 
