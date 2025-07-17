@@ -53,11 +53,11 @@ Start → Settings → System → Storage → Storage Sense → Enable
 
     Uninstalled unused applications via:
 
-Control Panel → Programs and Features
+    Control Panel → Programs and Features
 
     Created a scheduled task to clear temp files monthly.
 
-✅ Final Result
+##✅ Final Result
 
     25+ GB of disk space recovered
 
@@ -67,7 +67,7 @@ Control Panel → Programs and Features
 
     PC performance improved
 
-📌 Recommendations
+##📌 Recommendations
 
     Educate users to periodically clean Downloads and Temp folders
 
