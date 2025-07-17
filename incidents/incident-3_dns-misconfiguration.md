@@ -83,15 +83,6 @@ This prevented name resolution for all domains, despite having working internet 
 
     System resolves both internal and external domains
 
-## 📌 Recomendatios
-
-    Avoid setting static DNS manually unless required by the network
-
-    Use reliable public DNS like Google (8.8.8.8) or Cloudflare (1.1.1.1)
-
-    Train users to report "DNS server not responding" errors promptly
-
-    Consider using DHCP reservations and enforced DNS policies via Group Policy in corporate environments
 
 ✅ Logged and resolved by: David Vargas
 🗓️ Date: 7/17/2025
