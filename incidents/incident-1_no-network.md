@@ -1,90 +1,108 @@
-# 🌐 IT Incident Report: DNS Misconfiguration – Windows 11
+# 🛠 Incident 1: No Internet Connection
 
-## 📌 Incident Overview
-- **Title:** DNS Misconfiguration Causing Internet Issues  
-- **Environment:** Windows 11 Pro x64  
-- **User Impact:** User can access some websites via IP but cannot resolve domain names (e.g., google.com)
+
+
+
+## 🧾 Problem Description
+
+
+
+
+
+This incident was present in a network outage on an Ubuntu virtual machine. The system was unable to access websites or respond to external ping requests.
+
+
+
+
 
 ---
 
-## 🧾 Problem Description
-User reported that websites were not loading in any browser. Error messages included:
 
-> *“DNS server isn’t responding”*  
-> *“Hmm… can’t reach this page”*
 
-However, when testing via IP addresses, some services were accessible. For example:
 
-```powershell
-ping 8.8.8.8  → Success  
-ping google.com  → Failed (host not found)
 
-🔍 Troubleshooting Steps
-Step	Action/Command	Result	Interpretation
-1	ping 127.0.0.1	Success	Local TCP/IP stack working
-2	ping 8.8.8.8	Success	Internet connection is active
-3	ping google.com	Fails with "Ping request could not find host"	DNS resolution failing
-4	ipconfig /all	Shows DNS set to static IP (e.g., 192.168.0.5)	Misconfigured DNS
-5	nslookup google.com	Timed out or returns error	Confirms DNS is not responding
-6	Checked Network Settings → IPv4 Properties	DNS set manually	Incorrect or unreachable DNS server
-🧩 Root Cause
+## 🔍 Troubleshooting
 
-The system was using a static DNS IP (192.168.0.5) that was either:
 
-    Not reachable
 
-    Misconfigured
 
-    Not running a DNS service
 
-This prevented name resolution for all domains, despite having working internet access.
-🛠️ Solution Applied
+| Step | Command | Output | Interpretation |
 
-    Opened Control Panel → Network and Internet → Network Connections
 
-    Right-clicked the active network adapter → Properties
+|------|---------|--------|----------------|
 
-    Selected Internet Protocol Version 4 (TCP/IPv4) → Properties
 
-    Changed DNS settings from manual to automatic (Obtain DNS server address automatically)
+| 1 |    `ip a` | Only loopback interface active (`127.0.0.1`). `enp0s3` is DOWN. | No valid IP assigned; interface is down. |
 
-        Alternatively, entered public DNS manually:
 
-Preferred DNS: 8.8.8.8  
-Alternate DNS: 1.1.1.1
+| 2 |   `ip route` | No output | No default route is configured. |
 
-    Flushed DNS cache and renewed IP:
 
-ipconfig /flushdns
-ipconfig /release
-ipconfig /renew
+| 3 | `ping 127.0.0.1` | Responds successfully | Local TCP/IP stack is functioning. |
 
-    Retested with:
 
-ping google.com → Success  
-nslookup google.com → Returns IP address
+| 4 | `ping 8.8.8.8` | "Network is unreachable" | No external connectivity or gateway. |
+
+
+| 5 | `ping google.com` | "Temporary failure in name resolution" | DNS resolution failed due to no internet access. |
+
+
+| 6 | `cat /etc/resolv.conf` | Configured with `127.0.0.53`, managed by systemd-resolved | DNS appears correctly configured, but network is down. |
+
+
+
+
+
+---
+
+
+
+
+
+## 🧩 Root Cause
+
+
+
+
+
+The primary network interface `enp0s3` was manually disabled using:
+
+
+
+
+
+```bash
+
+
+sudo ip link set enp0s3 down
+
+
+
+
+
+🛠 Solution Applied
+
+
+
+
+
+The issue was resolved by re-enabling the interface with:
+
+
+
+
+
+sudo ip link set enp0s3 up
+
+
+
+
 
 ✅ Final Result
 
-    DNS resolution restored
 
-    User can browse the internet normally
 
-    No more errors in browser
 
-    System resolves both internal and external domains
 
-📌 Recommendations
-
-    Avoid setting static DNS manually unless required by the network
-
-    Use reliable public DNS like Google (8.8.8.8) or Cloudflare (1.1.1.1)
-
-    Train users to report "DNS server not responding" errors promptly
-
-    Consider using DHCP reservations and enforced DNS policies via Group Policy in corporate environments
-
-✅ Logged and resolved by: [Your Name]
-🗓️ Date: [Insert Date]
-🖥️ System: Windows 11 Pro – Build [e.g., 22631.3155]
-
+Connectivity was successfully restored. The system can now access external websites and resolve domain names via DNS.
