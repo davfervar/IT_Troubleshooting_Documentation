@@ -32,14 +32,18 @@ The primary network interface `enp0s3` was manually disabled using the following
 sudo ip link set enp0s3 down
 
 Without an active interface, the system could not obtain an IP address or default route.
-🛠️ Solution Applied
+
+
+## 🛠️ Solution Applied
 
 Re-enabled the network interface using:
 
 sudo ip link set enp0s3 up
 
 DHCP automatically assigned a valid IP address and default gateway. Network functionality was restored.
-✅ Final Result
+
+
+## ✅ Final Result
 
     Internet connectivity successfully restored
 
@@ -47,7 +51,7 @@ DHCP automatically assigned a valid IP address and default gateway. Network func
 
     System can access external websites and respond to ping requests
 
-📌 Recommendations
+## 📌 Recommendations
 
     Avoid manually disabling network interfaces unless troubleshooting.
 
