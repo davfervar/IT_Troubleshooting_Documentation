@@ -9,7 +9,7 @@ step-by-step resolution, and a concluding reflection.
 
 - [Incident 1 – Not internet connection](incidents/incident-1_no-network.md)
 - [Incident 2 – Disk Full](incidents/incident-2_disk-full.md)
-- [Incident 3 – Login Error](incidents/incident-3_dns-misconfiguration.md)
+- [Incident 3 – DNS Misconfiguration](incidents/incident-3_dns-misconfiguration.md)
 - [Incident 3 – Login Error](incidents/incident-3_dns-misconfiguration.md)
 
 ## 🛠 Tools Used
