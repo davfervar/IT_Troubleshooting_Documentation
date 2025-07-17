@@ -3,8 +3,8 @@
 
  IT Troubleshooting Lab
 
-This project documentation details the troubleshooting process for a network connectivity issue. 
-It simulates real-world scenarios encountered by IT technicians, with each case including a detailed diagnosis,
+This project documentation details the troubleshooting process for a network connectivity issues including linux and windows 
+It shows real-world scenarios encountered by IT technicians, with each case including a detailed diagnosis,
 step-by-step resolution, and a concluding reflection.
 
 - [Incident 1 – Not internet connection](incidents/incident-1_no-network.md)
