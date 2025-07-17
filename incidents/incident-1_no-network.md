@@ -36,11 +36,11 @@ Without an active interface, the system could not obtain an IP address or defaul
 
 ## 🛠️ Solution Applied
 
-Re-enabled the network interface using:
+    Re-enabled the network interface using:
 
-sudo ip link set enp0s3 up
+    sudo ip link set enp0s3 up
 
-DHCP automatically assigned a valid IP address and default gateway. Network functionality was restored.
+    DHCP automatically assigned a valid IP address and default gateway. Network functionality was restored.
 
 
 ## ✅ Final Result
