@@ -18,7 +18,7 @@ Manual troubleshooting of network issues can be time-consuming. This script aims
 
 ## 🛠️ Python Script: `network_diagnostic.py`
 
------> [Script](scripts/script1)
+-----> [Script](scripts/network_diagnostic.py)
 
 ## 🧪 Sample Output (Console)
     
@@ -37,15 +37,6 @@ Manual troubleshooting of network issues can be time-consuming. This script aims
 
     Outputs a readable summary in console and saves a log file for Helpdesk reference.
 
-## 📌 Recommendations
-    Include this script in Helpdesk USB kits or shared folders
-
-    Train junior staff to run and interpret the results
-
-    Can be extended to test VPN status, proxy, or corporate DNS as needed
-
-    Package as .exe with pyinstaller for easy use by non-technical users
-
-✅ Logged and created by: [Your Name]
-🗓️ Date: [Insert Date]
+✅ Logged and created by: David Vargas
+🗓️ Date: 7/17/2025
 📁 File: network_diagnostic.py
