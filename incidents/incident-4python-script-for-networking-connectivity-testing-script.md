@@ -36,46 +36,10 @@ A simple but powerful network diagnostic tool built with Python and Tkinter for 
 ### 🔧 Prerequisites (for source code)
 
 - Python 3.10+ installed on Windows
-- Required modules: `tkinter`, `socket`, `subprocess`
-
+  
 ### ▶️ To run from source:
+Download the python file on your pc and run it with python.
 
-```bash
-python network_gui.py
-
-🪄 To create the .exe (optional):
-
-Install PyInstaller if you haven’t:
-
-pip install pyinstaller
-
-Then generate the EXE:
-
-pyinstaller --onefile --windowed network_gui.py
-
-Executable will appear in the dist/ folder.
-🧾 Sample Output
-
-When running diagnostics, the tool returns:
-
-✅ Local IP: 192.168.1.45  
-✅ Connectivity to 8.8.8.8 successful  
-✅ DNS resolution working  
-
-Or error messages like:
-
-❌ Could not ping 8.8.8.8  
-❌ DNS resolution failed  
-
-📁 Files Included
-
-    network_gui.py — Python source code
-
-    network_gui.exe — Compiled executable (optional, not versioned)
-
-    README.md — This documentation
-
-    screenshots/ — Optional GUI screenshot(s)
 
 ✍️ Author
 
@@ -84,22 +48,5 @@ Or error messages like:
     Role: IT Support Specialist (UCF Graduate)
 
     Date: July 17, 2025
+    
 
-💡 Future Ideas
-
-    Add traceroute and gateway ping
-
-    Export results to .txt or .log
-
-    Auto-repair DNS with fallback (e.g., switch to 1.1.1.1)
-
-    Integrate system info panel (OS, hostname, uptime)
-
-📜 License
-
-This project is released under the MIT License.
-
-
----
-
-Let me know if you'd like this turned into a downloadable ZIP with the `README`, `.py`, and scr
