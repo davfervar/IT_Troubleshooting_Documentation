@@ -18,7 +18,7 @@ Manual troubleshooting of network issues can be time-consuming. This script aims
 
 ## 🛠️ Python Script: `network_diagnostic.py`
 
------> [Script](scripts/network_diagnostic.py)
+-----> [script download](scripts/network_diagnostic.py)
 
 ## 🧪 Sample Output (Console)
     
