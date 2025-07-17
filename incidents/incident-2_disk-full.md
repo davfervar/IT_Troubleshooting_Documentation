@@ -35,8 +35,8 @@ The C:\ drive was nearly full due to a combination of:
 
 ## 🛠️ Solution Applied
 
-1. Cleared unnecessary files using Disk Cleanup:
-``powershell
+       1. Cleared unnecessary files using Disk Cleanup:
+       ``powershell
 
        cleanmgr /verylowdisk
 
