@@ -23,14 +23,15 @@ ping google.com  → Failed (host not found)
 
 ## 🔍 Troubleshooting Steps
 
-| Step | Action/Command | Result | Interpretation |
+| Step | Command/Action | Output | Interpretation |
 |------|----------------|--------|----------------|
-| 1 | Checked disk usage via **Settings → System → Storage** | C:\ drive at 99% usage | Disk is critically full |
-| 2 | Opened **File Explorer → This PC** | Red bar on C:\ drive | Visual confirmation of low disk space |
-| 3 | Opened **Storage Sense** under Settings | Several GBs used by Temporary Files | Possible to recover space automatically |
-| 4 | Ran `cleanmgr` as admin | Cleanup options loaded | Can delete temp files, recycle bin, old Windows files |
-| 5 | Checked `C:\Users\%USERNAME%\Downloads` | 15+ GB of old files | User storage hogging space |
-| 6 | Opened `WinDirStat` or `TreeSize Free` | Found large log files in `C:\ProgramData\...` | Hidden files taking up disk space |
+| 1 | `ping 127.0.0.1` | Success | Local TCP/IP stack is working |
+| 2 | `ping 8.8.8.8` | Success | Internet connection is active |
+| 3 | `ping google.com` | Ping request could not find host | DNS resolution is failing |
+| 4 | `ipconfig /all` | DNS server set to `192.168.0.5` | Static DNS server configured |
+| 5 | `nslookup google.com` | Timed out or error | DNS server is unreachable or misconfigured |
+| 6 | Checked IPv4 settings in Control Panel | DNS set manually to 192.168.0.5 | DNS is not responding or is incorrect |
+
 
 ## 🧩 Root Cause
 
