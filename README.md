@@ -8,7 +8,7 @@ It simulates real-world scenarios encountered by IT technicians, with each case 
 step-by-step resolution, and a concluding reflection.
 
 - [Incident 1 – Not internet connection](incidents/incident-1_no-network.md)
-- [Incident 2 – Disk Full] (próximamente)
+- [Incident 2 – Disk Full] (incidents/incident-2_disk-full.md)
 - [Incident 3 – Login Error] (próximamente)
 
 ## 🛠 Tools Used
