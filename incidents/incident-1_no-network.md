@@ -35,15 +35,15 @@ sudo ip link set enp0s3 up
 
 ## ✅ Final Result
 
-    Network connectivity was restored.
+Network connectivity was restored.
 
-    The system was able to:
+The system was able to:
+ 
+   Obtain a valid IP address
 
-        Obtain a valid IP address
+   Access external websites
 
-        Access external websites
-
-        Resolve domain names via DNS
+   Resolve domain names via DNS
 
 This issue highlights the importance of checking interface status and routing configuration early in the troubleshooting process.
 
