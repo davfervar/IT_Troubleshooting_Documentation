@@ -30,10 +30,5 @@ A simple but powerful network diagnostic tool built with Python and Tkinter for 
 - Script located in the scripts folder
 
 ✍️ Author
-
-    Name: David Vargas
-
-    Role: IT Support Specialist (UCF Graduate)
-
-    Date: July 17, 2025
+✅ Logged and resolved by: David Vargas 🗓️ Date: 7/17/2025 🖥️ System: Windows 11 Pro
     
