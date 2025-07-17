@@ -22,4 +22,4 @@ It shows real-world scenarios encountered by IT technicians, with each case incl
 
 ## 🚀 Autor
 
-David Vargas – IT professional graduated from University of Central Florida (UCF)
+David Varga
