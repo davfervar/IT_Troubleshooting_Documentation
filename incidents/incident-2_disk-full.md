@@ -76,6 +76,6 @@ The C:\ drive was nearly full due to a combination of:
 
     Enable Storage Sense as default on all endpoints
 
-✅ Logged and resolved by: [Your Name]
-🗓️ Date: [Insert Date]
-🖥️ System: Windows 11 Pro – Build [e.g., 22631.3155]
+✅ Logged and resolved by: David Vargas
+🗓️ Date: 7/17/2025
+🖥️ System: Windows 11 Pro
