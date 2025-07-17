@@ -21,7 +21,7 @@ However, when testing via IP addresses, some services were accessible. For examp
 ping 8.8.8.8  → Success  
 ping google.com  → Failed (host not found)
 
-🔍 Troubleshooting Steps
+## 🔍 Troubleshooting Steps
 Step	Action/Command	Result	Interpretation
 1	ping 127.0.0.1	Success	Local TCP/IP stack working
 2	ping 8.8.8.8	Success	Internet connection is active
@@ -29,7 +29,8 @@ Step	Action/Command	Result	Interpretation
 4	ipconfig /all	Shows DNS set to static IP (e.g., 192.168.0.5)	Misconfigured DNS
 5	nslookup google.com	Timed out or returns error	Confirms DNS is not responding
 6	Checked Network Settings → IPv4 Properties	DNS set manually	Incorrect or unreachable DNS server
-🧩 Root Cause
+
+## 🧩 Root Cause
 
 The system was using a static DNS IP (192.168.0.5) that was either:
 
@@ -40,7 +41,8 @@ The system was using a static DNS IP (192.168.0.5) that was either:
     Not running a DNS service
 
 This prevented name resolution for all domains, despite having working internet access.
-🛠️ Solution Applied
+
+## 🛠️ Solution Applied
 
     Opened Control Panel → Network and Internet → Network Connections
 
@@ -66,7 +68,8 @@ ipconfig /renew
 ping google.com → Success  
 nslookup google.com → Returns IP address
 
-✅ Final Result
+## ✅  Final Result
+
 
     DNS resolution restored
 
@@ -76,7 +79,7 @@ nslookup google.com → Returns IP address
 
     System resolves both internal and external domains
 
-📌 Recommendations
+## 📌 Recomendatios
 
     Avoid setting static DNS manually unless required by the network
 
