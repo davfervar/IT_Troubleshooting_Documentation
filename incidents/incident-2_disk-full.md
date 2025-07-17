@@ -54,7 +54,7 @@ The C:\ drive was nearly full due to a combination of:
 
         Control Panel → Programs and Features
 
-        Created a scheduled task to clear temp files monthly.
+    5.Created a scheduled task to clear temp files monthly.
 
 ## ✅ Final Result
 
