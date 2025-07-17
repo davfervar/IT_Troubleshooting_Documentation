@@ -1,88 +1,90 @@
-# 🛠️ IT Incident Report: DNS Misconfiguration on Windows 11
+# 🌐 IT Incident Report: DNS Misconfiguration – Windows 11
 
 ## 📌 Incident Overview
-
-- **Title:** DNS Not Resolving Domain Names  
-- **Environment:** Windows 11 Pro (Build 22631.3155)  
-- **User Impact:** User cannot browse the web or resolve domains, despite having internet connectivity.
+- **Title:** DNS Misconfiguration Causing Internet Issues  
+- **Environment:** Windows 11 Pro x64  
+- **User Impact:** User can access some websites via IP but cannot resolve domain names (e.g., google.com)
 
 ---
 
 ## 🧾 Problem Description
+User reported that websites were not loading in any browser. Error messages included:
 
-A user reported that they could not open websites in any browser. Pinging known IP addresses (e.g., `8.8.8.8`) worked, but domain names like `google.com` would not resolve. Applications relying on domain names (such as Teams and Outlook) also failed to connect.
+> *“DNS server isn’t responding”*  
+> *“Hmm… can’t reach this page”*
 
----
+However, when testing via IP addresses, some services were accessible. For example:
 
-## 🔍 Troubleshooting Steps
+```powershell
+ping 8.8.8.8  → Success  
+ping google.com  → Failed (host not found)
 
-| Step | Command/Action | Output | Interpretation |
-|------|----------------|--------|----------------|
-| 1 | `ping 127.0.0.1` | Success | Local TCP/IP stack is working |
-| 2 | `ping 8.8.8.8` | Success | Internet connection is active |
-| 3 | `ping google.com` | Ping request could not find host | DNS resolution is failing |
-| 4 | `ipconfig /all` | DNS server set to `192.168.0.5` | Static DNS server configured |
-| 5 | `nslookup google.com` | Timed out or error | DNS server is unreachable or misconfigured |
-| 6 | Checked IPv4 settings in Control Panel | DNS set manually to 192.168.0.5 | DNS is not responding or is incorrect |
+🔍 Troubleshooting Steps
+Step	Action/Command	Result	Interpretation
+1	ping 127.0.0.1	Success	Local TCP/IP stack working
+2	ping 8.8.8.8	Success	Internet connection is active
+3	ping google.com	Fails with "Ping request could not find host"	DNS resolution failing
+4	ipconfig /all	Shows DNS set to static IP (e.g., 192.168.0.5)	Misconfigured DNS
+5	nslookup google.com	Timed out or returns error	Confirms DNS is not responding
+6	Checked Network Settings → IPv4 Properties	DNS set manually	Incorrect or unreachable DNS server
+🧩 Root Cause
 
----
+The system was using a static DNS IP (192.168.0.5) that was either:
 
-## 🧩 Root Cause
+    Not reachable
 
-The computer had a manually configured DNS server (`192.168.0.5`) that was either offline, misconfigured, or non-existent. As a result, the system was unable to resolve domain names, even though the internet connection itself was functioning.
+    Misconfigured
 
----
+    Not running a DNS service
 
-## 🛠️ Solution Applied
+This prevented name resolution for all domains, despite having working internet access.
+🛠️ Solution Applied
 
-Reverted DNS settings to automatic, or used public DNS manually:
+    Opened Control Panel → Network and Internet → Network Connections
 
-1. Opened:
+    Right-clicked the active network adapter → Properties
 
-Control Panel → Network and Internet → Network Connections
+    Selected Internet Protocol Version 4 (TCP/IPv4) → Properties
 
+    Changed DNS settings from manual to automatic (Obtain DNS server address automatically)
 
-2. Right-clicked active adapter → **Properties**
+        Alternatively, entered public DNS manually:
 
-3. Selected:
-
-Internet Protocol Version 4 (TCP/IPv4) → Properties
-
-
-4. Changed from:
-
-Use the following DNS server addresses → to → Obtain DNS server address automatically
-
-
-Or set:
-
-Preferred DNS: 8.8.8.8
+Preferred DNS: 8.8.8.8  
 Alternate DNS: 1.1.1.1
 
+    Flushed DNS cache and renewed IP:
 
-5. Flushed DNS cache and renewed IP:
-```powershell
 ipconfig /flushdns
 ipconfig /release
 ipconfig /renew
 
+    Retested with:
+
+ping google.com → Success  
+nslookup google.com → Returns IP address
+
 ✅ Final Result
 
-    DNS resolution functional
+    DNS resolution restored
 
-    Browsers and apps working normally
+    User can browse the internet normally
 
-    System can resolve both internal and external domains
+    No more errors in browser
+
+    System resolves both internal and external domains
 
 📌 Recommendations
 
-    Avoid manually setting DNS unless required for specific environments
+    Avoid setting static DNS manually unless required by the network
 
-    Prefer using public DNS (e.g., Google 8.8.8.8 or Cloudflare 1.1.1.1) if needed
+    Use reliable public DNS like Google (8.8.8.8) or Cloudflare (1.1.1.1)
 
-    Use DHCP and Group Policy to manage DNS centrally in enterprise environments
+    Train users to report "DNS server not responding" errors promptly
 
-    Include DNS checks in automated diagnostic scripts
+    Consider using DHCP reservations and enforced DNS policies via Group Policy in corporate environments
 
-✅ Logged and resolved by: David Vargas
-🗓️ Date: 7/17/2025
+✅ Logged and resolved by: [Your Name]
+🗓️ Date: [Insert Date]
+🖥️ System: Windows 11 Pro – Build [e.g., 22631.3155]
+
