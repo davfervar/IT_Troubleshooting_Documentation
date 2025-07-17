@@ -28,10 +28,10 @@ The Ubuntu VM experienced a complete network outage. The user reported no intern
 ## 🧩 Root Cause
 The primary network interface `enp0s3` was manually disabled using the following command:
 
-```bash
 sudo ip link set enp0s3 down
 
 Without an active interface, the system could not obtain an IP address or default route.
+
 
 
 ## 🛠️ Solution Applied
