@@ -21,7 +21,6 @@ Manual troubleshooting of network issues can be time-consuming. This script aims
 -----> [Script](scripts/script1)
 
 ## 🧪 Sample Output (Console)
-
 🔍 Starting network diagnostics...
 
 Localhost (127.0.0.1): ✅ OK  
@@ -31,14 +30,13 @@ DNS Resolution (google.com): ❌ FAIL
 
 📄 Results saved to 'network_diagnostic_log.txt'
 
-✅ Final Result
+## ✅ Final Result
 
     Script correctly identifies whether issues are local, gateway-related, DNS-based or full internet outage.
 
     Outputs a readable summary in console and saves a log file for Helpdesk reference.
 
-📌 Recommendations
-
+## 📌 Recommendations
     Include this script in Helpdesk USB kits or shared folders
 
     Train junior staff to run and interpret the results
