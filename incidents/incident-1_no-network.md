@@ -47,7 +47,5 @@ This incident involved a network outage on an **Ubuntu virtual machine**. The sy
 
 This issue highlights the importance of checking interface status and routing configuration early in the troubleshooting process.
 
-🗂️ Category: Networking
-📅 Date Resolved: July 2025
-👨‍💻 Author: David Vargas (IT Support | UCF Graduate)
 
+✅ Logged and resolved by: David Vargas 🗓️ Date: 7/17/2025 🖥️ System: Ubuntu - Linux
