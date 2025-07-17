@@ -21,16 +21,16 @@ This incident involved a network outage on an **Ubuntu virtual machine**. The sy
 
 ## 🧩 Root Cause
 
-The primary network interface `enp0s3` was found to be **manually disabled**, likely due to a misconfiguration or a user action.
+    The primary network interface `enp0s3` was found to be **manually disabled**, likely due to a misconfiguration or a user action.
 
-``bash
-sudo ip link set enp0s3 down
+    ``bash
+    sudo ip link set enp0s3 down
 
 ## 🛠️ Solution Applied
 
-The interface was re-enabled using the following command:
+    The interface was re-enabled using the following command:
 
-sudo ip link set enp0s3 up
+    sudo ip link set enp0s3 up
 
 
 ## ✅ Final Result
