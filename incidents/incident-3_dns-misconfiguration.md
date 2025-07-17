@@ -47,15 +47,15 @@ This prevented name resolution for all domains, despite having working internet 
 
 ## 🛠️ Solution Applied
 
-   Opened Control Panel → Network and Internet → Network Connections
+  1.  Opened Control Panel → Network and Internet → Network Connections
 
-   Right-clicked the active network adapter → Properties
+  2. Right-clicked the active network adapter → Properties
 
-   Selected Internet Protocol Version 4 (TCP/IPv4) → Properties
+  3. Selected Internet Protocol Version 4 (TCP/IPv4) → Properties
 
-   Changed DNS settings from manual to automatic (Obtain DNS server address automatically)
+  4. Changed DNS settings from manual to automatic (Obtain DNS server address automatically)
 
-   Alternatively, entered public DNS manually:
+  5.  Alternatively, entered public DNS manually:
 
     Preferred DNS: 8.8.8.8  
     Alternate DNS: 1.1.1.1
