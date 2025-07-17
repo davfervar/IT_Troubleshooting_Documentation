@@ -17,7 +17,7 @@ User reported that websites were not loading in any browser. Error messages incl
 
 However, when testing via IP addresses, some services were accessible. For example:
 
-```powershell
+``powershell
 ping 8.8.8.8  → Success  
 ping google.com  → Failed (host not found)
 
