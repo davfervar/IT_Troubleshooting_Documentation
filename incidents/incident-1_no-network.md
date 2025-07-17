@@ -1,4 +1,4 @@
-# 🛠️ Incident 1: No Internet Connection (Ubuntu VM)
+# 🛠️ Incident 1: No Internet Connection (Ubuntu)
 
 ## 🧾 Problem Description
 
