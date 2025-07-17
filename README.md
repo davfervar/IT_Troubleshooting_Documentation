@@ -1,7 +1,7 @@
 
 
 
- IT Troubleshooting Lab
+ IT Troubleshooting 
 
 This project documentation details the troubleshooting process for a network connectivity issues including linux and windows 
 It shows real-world scenarios encountered by IT technicians, with each case including a detailed diagnosis,
