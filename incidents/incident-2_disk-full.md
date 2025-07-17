@@ -36,7 +36,7 @@ The C:\ drive was nearly full due to a combination of:
 ## 🛠️ Solution Applied
 
 1. Cleared unnecessary files using Disk Cleanup:
-```powershell
+``powershell
 cleanmgr /verylowdisk
 
     Enabled Storage Sense to run automatically every week:
