@@ -55,5 +55,5 @@ DHCP automatically assigned a valid IP address and default gateway. Network func
 
     Consider enabling systemd-networkd or NetworkManager to manage interfaces more reliably.
 
-✅ Logged and resolved by: [Your Name or IT Team]
-🗓️ Date: [Insert Date]
+✅ Logged and resolved by: David Vargas
+🗓️ Date: 7/17/2025
