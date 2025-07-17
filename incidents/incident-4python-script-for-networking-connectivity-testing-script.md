@@ -1,21 +1,3 @@
-🐍 INCIDENTE 4 – Script en Python para diagnosticar conectividad en Windows
-
-Te voy a dar:
-
-    ✅ El caso simulado como incidente IT (formato .md para GitHub)
-
-    🐍 Un script funcional en Python para Windows que:
-
-        Verifica conectividad general (localhost, gateway, internet)
-
-        Verifica si DNS está funcionando
-
-        Muestra resultados claros en consola
-
-        Opcionalmente guarda un log
-
-📝 1. Documento .md listo para tu GitHub:
-
 # 🐍 IT Incident Report: Python Network Diagnostic Script – Windows 11
 
 ## 📌 Incident Overview
