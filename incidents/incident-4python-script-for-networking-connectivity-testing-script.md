@@ -21,14 +21,6 @@ A simple but powerful network diagnostic tool built with Python and Tkinter for 
 - 🧠 Tests DNS resolution (e.g., resolves `google.com`)
 - ✅ GUI pop-up with pass/fail results
 - 🗃️ Clean and minimal interface, suitable for non-technical users
-
----
-
-## 📸 Screenshot
-
-> ![Screenshot of GUI](screenshots/network_gui_demo.png)  
-*Simple layout with one-click diagnostics*
-
 ---
 
 ## 🚀 Installation & Usage
